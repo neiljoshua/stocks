@@ -1,0 +1,50 @@
+.single-stock {
+  display: block;
+  background-color: $green;
+  padding: 30px;
+  .symbol,
+  .net-change {
+    display: inline-block;
+    @include calc( width, '50% - 60px');
+  }
+  .symbol {
+    font-size: 35px;
+    text-align: left;
+  }
+  .net-change {
+    text-align: right;
+    font-size: 28px;
+  }
+  .price {
+    margin-top: 30px;
+    font-size: 20px;
+    text-align: left;
+  }
+  &-list{
+    display: block;
+    width: 50%;
+    margin: 40px auto;
+    border: 1px solid $silver;
+    padding: 20px;
+  }
+
+  &-item {
+    text-decoration: none;
+    width: 100%;
+    font-size: 0;
+    margin-bottom: 20px;
+    &__day,
+    &__price {
+      display: inline-block;
+      width: 50%;
+      font-size: 20px;
+      color: $gray;
+    }
+    &__day{
+      text-align: left;
+    }
+    &__price{
+      text-align: right;
+    }
+  }
+}

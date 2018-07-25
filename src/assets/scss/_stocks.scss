@@ -1,0 +1,88 @@
+.stocks {
+  display: block;
+  width: 100%;
+  // flex-wrap: nowrap;
+  // align-items: stretch;
+  // background-color: $green;
+  .single-stock {
+    display: block;
+    @include calc( width, '100% - 82px');
+    min-height: 52vh;
+    border: 1px solid $silver;
+    padding: 20px;
+    margin: 20px;
+  }
+}
+
+article {
+  display: inline-block;
+  overflow: hidden;
+  @include calc( width, '100% - 82px');
+  text-align: center;
+  font-size: 0;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid $silver;
+  .info,
+  .stocks-list{
+    display: block;
+    float: left;
+    @include calc( width, '50% - 80px');
+    margin: 40px;
+  }
+  .symbol,
+  .net-change {
+    display: inline-block;
+    width: 50%;
+  }
+  .symbol {
+    font-size: 35px;
+    text-align: left;
+  }
+  .net-change {
+    text-align: right;
+    font-size: 22px;
+  }
+  .price {
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: left;
+  }
+
+}
+
+.stocks-list{
+  display: inline-block;
+  width: 100%;
+  margin: 40px auto;
+}
+
+.stocks-item {
+  text-decoration: none;
+  width: 100%;
+  font-size: 0;
+  margin-bottom: 20px;
+  &__day,
+  &__price {
+    display: inline-block;
+    width: 50%;
+    font-size: 18px;
+    color: $green;
+  }
+  &__day{
+    text-align: left;
+  }
+  &__price{
+    text-align: right;
+  }
+}
+
+#planet-chart {
+  display: block;
+  margin: 20px;
+  @include calc( width, '100% - 40px');
+
+}
+
+
+

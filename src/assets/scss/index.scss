@@ -1,0 +1,11 @@
+@import 'reset';
+@import '_mixins';
+@import'_variables';
+@import '_headerapp';
+@import '_stocks';
+@import '_stock';
+
+#app {
+  padding: 0;
+  margin: 0;
+}
