@@ -1,4 +1,4 @@
-.stocks {
+.home{
   display: block;
   width: 100%;
   // flex-wrap: nowrap;
@@ -29,26 +29,32 @@ article {
     float: left;
     @include calc( width, '50% - 80px');
     margin: 40px;
-  }
-  .symbol,
-  .net-change {
-    display: inline-block;
-    width: 50%;
-  }
-  .symbol {
-    font-size: 35px;
-    text-align: left;
-  }
-  .net-change {
-    text-align: right;
-    font-size: 22px;
-  }
-  .price {
-    margin-top: 10px;
-    font-size: 16px;
-    text-align: left;
+    h4 {
+      text-align: left;
+      font-size: 18px;
+      margin-bottom: 50px;
+    }
   }
 
+}
+
+.symbol,
+.net-change {
+  display: inline-block;
+  width: 50%;
+}
+.symbol {
+  font-size: 35px;
+  text-align: left;
+}
+.net-change {
+  text-align: right;
+  font-size: 22px;
+}
+.price {
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: left;
 }
 
 .stocks-list{
@@ -67,7 +73,7 @@ article {
     display: inline-block;
     width: 50%;
     font-size: 18px;
-    color: $green;
+    color: $gray;
   }
   &__day{
     text-align: left;

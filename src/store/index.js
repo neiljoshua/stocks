@@ -12,21 +12,13 @@ export const store = new Vuex.Store({
   plugins: [VuexORM.install(database)],
   state: {
     stocks: [],
-    stocksreverse: []
   },
   getters: {
-    reverseCharts (state,getters) {
-      let stockObj = state.stocks
-      return (id) => {
-        let chart = Object.keys(stockObj).forEach(function(e){
-          if( e == id ){
-            let chart = stockObj[e].chart
-            let reverseChart = chart.slice(-5).reverse()
-            console.log('object',reverseChart)
-            return reverseChart
-          }
-        });
-      }
+    get_stock: (state) => (key) => {
+      return state.stocks[key]
+    },
+    get_stock_info: (state) => (key) =>{
+      return state.stocks[key].quote
     }
   },
   actions: {
@@ -37,13 +29,12 @@ export const store = new Vuex.Store({
         .then(stocks => {
           commit('SET_STOCKS', stocks)
         })
-    },
+    }
   },
   mutations: {
     SET_STOCKS (state, stocks) {
       state.stocks = stocks
     }
-
   }
 });
 

@@ -13,7 +13,7 @@ Vue.use(VueAxios, axios)
 
 new Vue({
   el: '#app',
-  store,
   router,
+  store,
   render: h => h( App )
 });

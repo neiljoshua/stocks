@@ -1,9 +1,10 @@
 @import 'reset';
-@import '_mixins';
-@import'_variables';
-@import '_headerapp';
-@import '_stocks';
-@import '_stock';
+@import 'mixins';
+@import'variables';
+@import 'headerapp';
+@import 'home';
+@import 'stockpage';
+@import 'stock';
 
 #app {
   padding: 0;

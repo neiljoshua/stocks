@@ -1,23 +1,25 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Stocks from './components/Stocks'
-import Stock from './components/Stock'
+import Home from './components/Home'
+import StockPage from './components/StockPage'
 
 Vue.use(VueRouter)
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'history', //Get rid of # on url bar
   base: __dirname,
   routes: [
     {
       path: '/',
-      name: 'stocks',
-      component: Stocks
+      component: Home,
+      name: 'home',
+      props: true,
     },
     {
-      path: '/:name',
-      name: 'Stock',
-      component: Stock
+      path: '/stock/:name',
+      component: StockPage,
+      name: 'stock-page',
+      props: true,
     }
   ]
 });

@@ -1,17 +1,17 @@
 <template>
   <header class="headerapp">
-    <h1>{{title}}</h1>
+    <button @click="goToHomePage" class="logo">S</button>
   </header>
 </template>
 
 <script>
   export default {
     name: 'Headerapp',
-    data() {
-      return {
-        title: 'Stocks'
+    methods: {
+      goToHomePage() {
+        this.$router.push('/')
       }
-    }
+    },
   }
 </script>
 
