@@ -1,17 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import VuexORM from '@vuex-orm/core'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import database from './database'
 
 Vue.use(Vuex)
 Vue.use(VueAxios, axios)
 
 export const store = new Vuex.Store({
-  plugins: [VuexORM.install(database)],
   state: {
-    stocks: [],
+    stocks: []
   },
   getters: {
     get_stock: (state) => (key) => {
@@ -19,6 +16,12 @@ export const store = new Vuex.Store({
     },
     get_stock_info: (state) => (key) =>{
       return state.stocks[key].quote
+    },
+    get_stock_chart: (state) => (key) =>{
+      return state.stocks[key].chart
+    },
+    get_stock_news: (state) => (key) =>{
+      return state.stocks[key].news
     }
   },
   actions: {
@@ -38,5 +41,3 @@ export const store = new Vuex.Store({
   }
 });
 
-// store.dispatch('entities', { data: this.$tore.state.stocks })
-// store.dispatch('entities/create', { data: stocks })

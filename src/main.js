@@ -7,13 +7,15 @@ import VueRouter from 'vue-router'
 import App from './App'
 import router  from './routes'
 import {store} from './store/index'
+import VueFrappe from 'vue2-frappe'
 
+Vue.use(VueFrappe)
 Vue.use(VueRouter)
 Vue.use(VueAxios, axios)
 
 new Vue({
   el: '#app',
-  router,
   store,
+  router,
   render: h => h( App )
 });

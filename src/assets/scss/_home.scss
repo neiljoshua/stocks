@@ -17,21 +17,25 @@
 article {
   display: inline-block;
   overflow: hidden;
-  @include calc( width, '100% - 82px');
   text-align: center;
   font-size: 0;
   margin: 20px;
-  padding: 20px;
+  padding: 30px;
   border: 1px solid $silver;
+  @include prefix( border-radius, 15px 15px 15px 15px , webkit ms);
+  @include calc( width, '100% - 102px');
   .info,
   .stocks-list{
     display: block;
     float: left;
-    @include calc( width, '50% - 80px');
-    margin: 40px;
+    @include calc( width, '50% - 120px');
+    margin: 0 40px;
+    padding: 20px;
+    @include prefix( border-radius, 15px 15px 15px 15px , webkit ms);
+    @include prefix( box-shadow,  0px 0px 15px 5px rgba(0,0,0,0.1), webkit ms);
     h4 {
-      text-align: left;
-      font-size: 18px;
+      text-align: center;
+      font-size: 22px;
       margin-bottom: 50px;
     }
   }
@@ -39,29 +43,35 @@ article {
 }
 
 .symbol,
-.net-change {
+.net-change,
+.price {
   display: inline-block;
   width: 50%;
 }
-.symbol {
-  font-size: 35px;
-  text-align: left;
-}
-.net-change {
-  text-align: right;
+
+.symbol{
+  padding: 10px;
+  color: $gray;
   font-size: 22px;
+  background-color: $green;
+  @include prefix(transition, color .7s ease-out , webkit ms);
+   &:hover {
+    color: $white;
+    @include prefix(transition, color .6s linear , webkit ms);
+  }
+}
+
+.net-change {
+  text-align: left;
+  font-size: 18px;
 }
 .price {
   margin-top: 10px;
-  font-size: 16px;
-  text-align: left;
+  font-size: 18px;
+  text-align: right;
 }
 
-.stocks-list{
-  display: inline-block;
-  width: 100%;
-  margin: 40px auto;
-}
+
 
 .stocks-item {
   text-decoration: none;
@@ -87,7 +97,6 @@ article {
   display: block;
   margin: 20px;
   @include calc( width, '100% - 40px');
-
 }
 
 

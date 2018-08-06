@@ -3,9 +3,8 @@
     <h4> Weekly Report</h4>
     <ul>
       <li v-for="chart in charts" class="stocks-item">
-         <p class="steph" style="color:red">{{chart.quote}}</p>
-         <p class="stocks-item__day steph2">{{chart.date}}</p>
-         <p class="stocks-item__price">{{chart.high}}</p>
+         <p class="stocks-item__day">{{chart.date}}</p>
+         <p class="stocks-item__price">{{chart.high}} USD </p>
        </li>
     </ul>
   </div>

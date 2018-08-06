@@ -7,11 +7,13 @@
   }
   .logo {
     display: inline-block;
-    margin: 20px;
-    font-size: 25px;
-    border: 1px solid $white;
+    margin: 15px;
+    font-size: 35px;
     color: $white;
-    padding: 12px;
+    background-color: $green;
+    padding: 10px 20px;
+    @include prefix( border-radius, 50px 50px 50px 50px , webkit ms);
+    @include prefix( box-shadow,  0px 0px 15px 5px rgba(0,0,0,0.17), webkit ms);
 
   }
 }

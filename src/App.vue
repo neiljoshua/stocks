@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Headerapp/>
-    <router-view/>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -15,7 +15,7 @@
     name: 'App',
     components: {
       Headerapp
-    },
+    }
 
   }
 </script>

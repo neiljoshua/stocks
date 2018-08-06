@@ -1,11 +1,13 @@
-<template>
+<template v-if="stockInfo(stockname)">
 
   <div class="stockPage">
+
     <article>
-      <h2 class="symbol">{{$route.params.name}}</h2>
-      <p class="copy">{{stockData.companyName}}</p>
+      <h2 class="title">{{$route.params.name}}</h2>
+      <p class="copy">{{stockInfo(stockname).companyName}}</p>
     </article>
-    <stockPageInfo :dataStock="stockData" :name="$route.params.name"></stockPageInfo>
+    <stockPageChart v-if="chart(stockname)" :dataStock="chart(stockname)" :stockName="$route.params.name"></stockPageChart>
+    <StockPageNews v-if="news(stockname)" :dataNews="news(stockname)"></StockPageNews>
   </div>
 
 </template>
@@ -14,49 +16,41 @@
 
   import { mapState } from 'vuex'
   import { mapGetters } from 'vuex'
-  import StockPageInfo from './StockPageInfo'
+  import StockPageChart from './StockPageChart'
+  import StockPageNews from './StockPageNews'
 
   export default {
 
     name: 'stockPage',
     data: function() {
       return {
-        stockname: null,
-        stockData: null
+        stockname: this.$route.params.name
       }
     },
     watch: {
-      '$route': 'fetchStockData'
-    },
-    methods: {
-      fetchStockData () {
-        this.$router.push('/stock/'+this.$route.params.name)
+      '$route' (to, from) {
+        this.stockname = to.params.name
       }
     },
     computed: {
       ...mapState([
         'stocks'
       ]),
-      ...mapGetters([
-        'get_stock',
-        'get_stock_info'
-      ]),
-      Stock() {
-        return this.get_stock(this.$route.params.name)
-      },
-      StockInfo() {
-        return this.get_stock_info(this.$route.params.name)
-      }
+      ...mapGetters({
+        stockInfo: 'get_stock_info',
+        chart: 'get_stock_chart',
+        news: 'get_stock_news'
+      }),
     },
     created() {
-      this.stockname = this.$route.params.name,
-      this.stockData = this.StockInfo
+      this.stockname = this.$route.params.name
     },
     mounted() {
       this.$store.dispatch('loadStocks')
     },
     components: {
-      StockPageInfo
+      StockPageChart,
+      StockPageNews
     }
   }
 

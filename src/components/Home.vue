@@ -11,11 +11,11 @@
 
   export default {
 
-    name: 'Home',
+    name: 'home',
     computed: {
       ...mapState([
         'stocks'
-      ]),
+      ])
     },
     mounted() {
       this.$store.dispatch('loadStocks')
@@ -23,7 +23,6 @@
     components: {
       Stock
     }
-
   }
 
 </script>
