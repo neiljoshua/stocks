@@ -4,42 +4,45 @@
   // flex-wrap: nowrap;
   // align-items: stretch;
   // background-color: $green;
-  .single-stock {
-    display: block;
-    @include calc( width, '100% - 82px');
-    min-height: 52vh;
-    border: 1px solid $silver;
-    padding: 20px;
-    margin: 20px;
-  }
 }
 
 article {
-  display: inline-block;
+  display: block;
   overflow: hidden;
   text-align: center;
   font-size: 0;
   margin: 20px;
-  padding: 30px;
+  padding: 10px;
   border: 1px solid $silver;
   @include prefix( border-radius, 15px 15px 15px 15px , webkit ms);
-  @include calc( width, '100% - 102px');
-  .info,
-  .stocks-list{
-    display: block;
-    float: left;
-    @include calc( width, '50% - 120px');
-    margin: 0 40px;
-    padding: 20px;
-    @include prefix( border-radius, 15px 15px 15px 15px , webkit ms);
-    @include prefix( box-shadow,  0px 0px 15px 5px rgba(0,0,0,0.1), webkit ms);
-    h4 {
-      text-align: center;
-      font-size: 22px;
-      margin-bottom: 50px;
-    }
+  @include calc( width, '100% - 62px');
+  @include media-min-width(desktop) {
+    max-width: 1020px;
+    margin: 20px auto;
+    padding: 30px;
+    @include calc( width, '100% - 102px');
   }
+}
 
+.info,
+.stocks-list{
+  display: inline-block;
+  margin: 20px 10px;
+  padding: 20px;
+  @include calc( width, '100% - 60px');
+  @include prefix( border-radius, 15px 15px 15px 15px , webkit ms);
+  @include media-min-width(mobile) {
+    vertical-align: top;
+    @include calc( width, '50% - 60px');
+  }
+  @include prefix( box-shadow,  0px 0px 15px 5px rgba(0,0,0,0.1), webkit ms);
+  h4 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 50px;
+    font-family: $serif;
+    color: $gray;
+  }
 }
 
 .symbol,
@@ -51,27 +54,28 @@ article {
 
 .symbol{
   padding: 10px;
-  color: $gray;
+  color: $black;
   font-size: 22px;
   background-color: $green;
-  @include prefix(transition, color .7s ease-out , webkit ms);
+  font-family: $serif;
+  @include prefix(transition, color .7s ease-in , webkit ms);
    &:hover {
     color: $white;
-    @include prefix(transition, color .6s linear , webkit ms);
+    @include prefix(transition, color .6s ease-out , webkit ms);
   }
 }
 
 .net-change {
   text-align: left;
   font-size: 18px;
+  font-family: $sanserif;
 }
 .price {
   margin-top: 10px;
   font-size: 18px;
   text-align: right;
+  font-family: $sanserif;
 }
-
-
 
 .stocks-item {
   text-decoration: none;
@@ -84,6 +88,7 @@ article {
     width: 50%;
     font-size: 18px;
     color: $gray;
+    font-family: $sanserif;
   }
   &__day{
     text-align: left;
@@ -93,11 +98,16 @@ article {
   }
 }
 
-#planet-chart {
-  display: block;
-  margin: 20px;
-  @include calc( width, '100% - 40px');
+.pos {
+  color: $positive_stock_color;
 }
+
+.neg {
+  color: $negative_stock_color;
+}
+
+
+
 
 
 

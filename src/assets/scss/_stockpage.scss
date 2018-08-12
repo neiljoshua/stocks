@@ -5,71 +5,113 @@
     font-size: 18px;
   }
 }
+
+.stock-info {
+  margin: 0 20px;
+  padding: 0 20px;
+  @include calc(width, '100%-40px');
+}
 .chart {
   display: block;
   width: 100%;
   &__tittle {
     margin: 20px 0;
-    font-size: 24px;
+    font-size: 22px;
     text-align: left;
+    @include media-min-width(mobile) {
+      font-size: 24px;
+    }
   }
   &__copy {
     margin: 10px 0;
-    font-size: 18px;
+    font-size: 16px;
     text-align: left;
+    @include media-min-width(mobile) {
+      font-size: 18px;
+    }
   }
   &-container {
     margin: 20px 0 30px;
   }
   h2 {
     font-size: 22px;
+    font-family: $serif;
+    font-weight: 600;
   }
-}
-
-.title{
-  font-size: 25px;
-  color: $black;
-  text-align: left;
 }
 
 .symbol {
   width: 100%;
 }
 
+.title{
+  font-size: 25px;
+  color: $black;
+  margin-bottom: 10px;
+  text-align: left;
+  font-family: $serif;
+  font-weight: 600;
+}
+
 .copy {
   font-size: 18px;
   text-align: left;
+  font-family: $sanserif;
 }
 .news {
-  padding: 20px;
   h2 {
   font-size: 25px;
   margin-bottom: 20px;
+  font-family: $serif;
   }
 }
 
 .news-list{
-  margin: 20px;
-  padding: 20px;
-  @include calc(width, '110-80px');
   h2 {
     font-size: 25px;
     margin-bottom: 20px;
-  }
-  h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  p {
-    font-size: 16px;
-    margin-bottom: 10px;
   }
 }
 
 .news-item {
   padding: 20px;
-  border: 1px solid $silver;
   @include prefix( border-radius, 15px 15px 15px 15px , webkit ms);
   @include prefix( box-shadow,  0px 0px 15px 5px rgba(0,0,0,0.1), webkit ms);
-  @include calc( width, '100% - 42px');
+  @include calc(width, '100%-40px');
+  &__title {
+    font-size: 24px;
+    margin: 30px 0;
+    font-family: $serif;
+    font-weight: 600;
+  }
+  &__copy {
+    margin: 0 auto;
+    max-width: 720px;
+    line-height: 1.25;
+    font-size: 18px;
+    font-family: $sanserif;
+  }
+  &__image {
+    font-size: 18px;
+    margin: 20px 0;
+  }
+  &__link {
+    display: inline-block;
+    text-align: right;
+    font-size: 18px;
+    margin: 30px auto;
+    color: $green;
+    text-decoration: underline;
+    font-family: $sanserif;
+    font-weight: 600;
+  }
+}
+
+
+.chart-container {
+  display: block;
+  padding: 20px;
+  @include prefix( border-radius, 15px 15px 15px 15px , webkit ms);
+  @include prefix( box-shadow,  0px 0px 15px 5px rgba(0,0,0,0.1), webkit ms);
+  @include calc( width, '100% - 40px');
 }

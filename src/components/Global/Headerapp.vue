@@ -1,6 +1,6 @@
 <template>
   <header class="headerapp">
-    <button @click="goToHomePage" class="logo">S</button>
+    <button @click="goToHomePage" class="logo"><img src="/static/img/favicon.ico" alt="Stocks App"></button>
   </header>
 </template>
 

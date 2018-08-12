@@ -1,7 +1,7 @@
 <template>
   <article>
     <div v-if="stockName" class="chart">
-      <h2> Last 30 Days Chart </h2>
+      <h2> 30 Days Closing </h2>
       <vue-frappe
         v-bind:id="stockName"
         v-bind:title="stockName"
