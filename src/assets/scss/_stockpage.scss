@@ -7,9 +7,54 @@
 }
 
 .stock-info {
-  margin: 0 20px;
-  padding: 0 20px;
+  margin: 20px;
   @include calc(width, '100%-40px');
+}
+
+.table{
+  display: block;
+  width: 100%;
+  margin: 40px 0;
+  @include media-min-width(mobile) {
+    display: inline-block;
+    font-size: 0;
+    &:first-child {
+      margin: 20px 30px 20px 0;
+    }
+    &:last-child {
+      margin: 20px 0 20px 30px;
+    }
+    @include calc(width, '50% - 15px');
+  }
+  @include media-min-width(tablet) {
+    &:first-child {
+      margin: 20px 60px 20px 0;
+    }
+    &:last-child {
+      margin: 20px 0 20px 60px;
+    }
+    @include calc(width, '50% - 30px');
+  }
+  .table-row {
+    width: 100%;
+    display: block;
+    .table-cell {
+      display: inline-block;
+      width: 50%;
+      margin: 10px 0;
+      font-size: 14px;
+      font-family: $sanserif;
+      @include media-min-width(tablet) {
+        font-size: 19px;
+      }
+      &:first-child {
+        text-align: left;
+      }
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
 }
 .chart {
   display: block;
@@ -110,8 +155,7 @@
 
 .chart-container {
   display: block;
-  padding: 20px;
+  padding: 20px 0;
   @include prefix( border-radius, 15px 15px 15px 15px , webkit ms);
   @include prefix( box-shadow,  0px 0px 15px 5px rgba(0,0,0,0.1), webkit ms);
-  @include calc( width, '100% - 40px');
 }

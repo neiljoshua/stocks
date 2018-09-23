@@ -1,7 +1,6 @@
 <template>
   <article>
     <div class="news">
-    <h2> Latest News</h2>
     <ul class="news-list">
       <li v-for="item in dataNews" class="news-item">
          <h3 class="news-item__title">{{item.headline}}</h3>

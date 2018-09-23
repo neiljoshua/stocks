@@ -1,13 +1,12 @@
 <template>
   <article>
     <div v-if="stockName" class="chart">
-      <h2> 30 Days Closing </h2>
       <vue-frappe
         v-bind:id="stockName"
         v-bind:title="stockName"
         type="line"
         v-bind:labels="loadLabels"
-        :height="650"
+        :height="240"
         :colors="['#44CFCB']"
         :lineOptions="{regionFill: 1}"
         :data-sets="[
@@ -19,7 +18,6 @@
 </template>
 
 <script>
-  import VueFrappe from 'vue2-frappe'
 
   export default {
 

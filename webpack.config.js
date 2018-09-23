@@ -1,3 +1,4 @@
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 var path = require('path')
 var webpack = require('webpack')
 
@@ -58,7 +59,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -71,8 +72,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
-      'Models': path.resolve(__dirname, 'src/models/'),
+      'vue$': 'vue/dist/vue.esm.js'
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
@@ -96,12 +96,16 @@ if (process.env.NODE_ENV === 'production') {
         NODE_ENV: '"production"'
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    }),
+    new UglifyJsPlugin({
+            "uglifyOptions":
+                {
+                    compress: {
+                        warnings: false
+                    },
+                    sourceMap: true
+                }
+        }
+    ),
     new webpack.LoaderOptionsPlugin({
       minimize: true
     })
