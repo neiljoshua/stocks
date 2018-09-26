@@ -1,18 +1,24 @@
 .home{
   display: block;
   width: 100%;
+  padding: 20px 0;
 }
 
 article {
   display: block;
+  width: 100%;
   overflow: hidden;
   text-align: center;
   font-size: 0;
-  margin: 20px;
-  padding: 10px;
-  border: 1px solid $silver;
-  @include prefix( border-radius, 15px 15px 15px 15px , webkit ms);
-  @include calc( width, '100% - 62px');
+  padding: 20px 0;
+  border-top: 1px solid $silver;
+  @include media-min-width(mobile) {
+    border: 1px solid $silver;
+    @include prefix( border-radius, 15px 15px 15px 15px , webkit ms);
+    padding: 10px;
+    margin: 20px;
+    @include calc( width, '100% - 82px');
+  }
   @include media-min-width(desktop) {
     max-width: 1020px;
     margin: 20px auto;
@@ -24,14 +30,14 @@ article {
 .info,
 .stocks-list{
   display: inline-block;
-  margin: 20px 10px;
+  margin: 20px;
   padding: 20px;
-  @include calc( width, '100% - 60px');
+  @include calc( width, '100% - 80px');
   @include prefix( border-radius, 15px 15px 15px 15px , webkit ms);
   @include prefix( box-shadow,  0px 0px 15px 5px rgba(0,0,0,0.1), webkit ms);
   @include media-min-width(mobile) {
     vertical-align: top;
-    @include calc( width, '50% - 60px');
+    @include calc( width, '50% - 80px');
   }
   h4 {
     text-align: center;
