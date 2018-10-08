@@ -16,7 +16,7 @@ const router = new VueRouter({
       props: true,
     },
     {
-      path: '/stock/:name',
+      path: '/:name',
       component: StockPage,
       name: 'stock-page',
       props: true,

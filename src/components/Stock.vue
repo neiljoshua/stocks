@@ -28,7 +28,7 @@
     },
     methods: {
       goToStockPAge() {
-        this.$router.push('/stock/'+this.stockById)
+        this.$router.push('/'+this.stockById)
       }
     },
     computed: {
