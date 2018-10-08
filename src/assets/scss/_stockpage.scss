@@ -1,14 +1,24 @@
-.stockpage {
+.stock-page {
   display: block;
   width: 100%;
+  padding: 20px 0 50px;
   p {
     font-size: 18px;
+  }
+}
+section {
+  padding: 20px;
+  @include media-min-width(mobile) {
+    padding: 30px;
+  }
+  @include media-min-width(tablet) {
+    padding: 20px 40px;
   }
 }
 
 .stock-info {
   margin: 20px;
-  @include calc(width, '100%-40px');
+  @include calc(width, '100% - 40px');
 }
 
 .table{
@@ -18,33 +28,30 @@
   @include media-min-width(mobile) {
     display: inline-block;
     font-size: 0;
-    &:first-child {
-      margin: 20px 30px 20px 0;
+    margin: 20px 15px 20px 0;
+    &:last-child {
+      margin: 20px 0 20px 15px;
     }
+    @include calc(width, '50% - 17px');
+  }
+  @include media-min-width(tablet) {
+    margin: 20px 30px 20px 0;
     &:last-child {
       margin: 20px 0 20px 30px;
     }
-    @include calc(width, '50% - 15px');
-  }
-  @include media-min-width(tablet) {
-    &:first-child {
-      margin: 20px 60px 20px 0;
-    }
-    &:last-child {
-      margin: 20px 0 20px 60px;
-    }
-    @include calc(width, '50% - 30px');
+    @include calc(width, '50% - 32px');
   }
   .table-row {
     width: 100%;
     display: block;
     .table-cell {
       display: inline-block;
-      width: 50%;
+      @include calc(width, '50% - 10px');
       margin: 10px 0;
       font-size: 14px;
       font-family: $sanserif;
       @include media-min-width(tablet) {
+        width: 50%;
         font-size: 19px;
       }
       &:first-child {
@@ -103,26 +110,25 @@
   text-align: left;
   font-family: $sanserif;
 }
-.news {
-  h2 {
-  font-size: 25px;
-  margin-bottom: 20px;
-  font-family: $serif;
-  }
-}
-
-.news-list{
-  h2 {
-    font-size: 25px;
-    margin-bottom: 20px;
-  }
-}
 
 .news-item {
+  margin: 0;
   padding: 20px;
+  text-align: center;
   @include prefix( border-radius, 15px 15px 15px 15px , webkit ms);
   @include prefix( box-shadow,  0px 0px 15px 5px rgba(0,0,0,0.1), webkit ms);
-  @include calc(width, '100%-40px');
+  @include calc(width, '100% - 42px');
+  @include calc(max-width, '100% - 42px');
+  @include media-min-width(mobile) {
+    padding: 20px 30px;
+    @include calc(width, '100% - 62px');
+    @include calc(max-width, '100% - 62px');
+  }
+  @include media-min-width(tablet) {
+    padding: 20px 40px;
+    @include calc(width, '100% - 82px');
+    @include calc(max-width, '100% - 82px');
+  }
   &__title {
     font-size: 24px;
     margin: 30px 0;

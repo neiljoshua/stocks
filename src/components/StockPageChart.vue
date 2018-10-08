@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <section>
     <div v-if="stockName" class="chart">
       <vue-frappe
         v-bind:id="stockName"
@@ -14,7 +14,7 @@
         ]"
       ></vue-frappe>
     </div>
-  </article>
+  </section>
 </template>
 
 <script>

@@ -1,8 +1,8 @@
 <template v-if="stockInfo(stockname)">
 
-  <div class="stockPage">
+  <div class="stock-page">
 
-    <article>
+    <section>
       <div class="stock-info">
         <h2 class="title">{{$route.params.name}}</h2>
         <p class="copy">{{stockInfo(stockname).companyName}}</p>
@@ -43,7 +43,7 @@
           </div>
         </div>
       </div>
-    </article>
+    </section>
     <stockPageChart v-if="chart(stockname)" :dataStock="chart(stockname)" :stockName="$route.params.name"></stockPageChart>
     <StockPageNews v-if="news(stockname)" :dataNews="news(stockname)"></StockPageNews>
   </div>
