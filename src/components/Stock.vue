@@ -1,10 +1,10 @@
 <template>
 
-  <article :stockId="stock.quote.symbol">
-    <div class="info">
-      <button @click="goToStockPAge" class="symbol">{{stock.quote.symbol}}</button>
-      <h3 class="net-change" v-bind:class="stockChangeValue" > {{stock.quote.change}} </h3>
-      <p class="price">$ {{roundValue}}</p>
+  <article class="stocks-block" :stockId="stock.quote.symbol">
+    <div class="stocks-info">
+      <button @click="goToStockPAge" class="stocks-info__symbol">{{stock.quote.symbol}}</button>
+      <h3 class="stocks-info__change" v-bind:class="stockChangeValue" > {{stock.quote.change}} </h3>
+      <p class="stocks-info__price">$ {{roundValue}}</p>
     </div>
     <stockChart :stock="stock.chart" :stockId="stock.quote.symbol"></stockChart>
   </article>

@@ -1,63 +1,59 @@
-.stock-page {
+.stock {
   display: block;
-  width: 100%;
-  padding: 20px 0 50px;
-  p {
-    font-size: 18px;
-  }
-}
-section {
-  padding: 20px;
+  padding: 20px 20px 60px;
+  @include calc(width, '100% - 40px');
   @include media-min-width(mobile) {
-    padding: 30px;
+    padding: 20px 30px 60px;
+    @include calc(width, '100% - 60px');
   }
   @include media-min-width(tablet) {
-    padding: 20px 40px;
+    padding: 20px 40px 60px;
+    @include calc(width, '100% - 80px');
   }
-  @include media-min-width(desktop) {
-    max-width: 1024px;
-    margin: 0 auto;
-    padding: 20px 40px;
+  &-info,
+  &-chart,
+  &-news {
+    display: block;
+    padding: 20px 0;
+    margin: 20px 0;
+    @include prefix( border-radius, 15px 15px 15px 15px , webkit ms);
+    @include prefix( box-shadow,  0px 0px 15px 5px rgba(0,0,0,0.1), webkit ms);
+    @include media-min-width(desktop) {
+      max-width: 1024px;
+      margin: 20px auto;
+    }
   }
 }
 
 .stock-info {
-  margin: 20px;
-  @include calc(width, '100% - 40px');
+  &__title,
+  &__copy {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
 }
 
-.table{
+.table {
   display: block;
-  width: 100%;
-  margin: 40px 0;
+  margin: 40px 20px;
+  @include calc(width, '100% - 40px');
   @include media-min-width(mobile) {
     display: inline-block;
     font-size: 0;
-    margin: 20px 15px 20px 0;
-    &:last-child {
-      margin: 20px 0 20px 15px;
-    }
-    @include calc(width, '50% - 17px');
-  }
-  @include media-min-width(tablet) {
-    margin: 20px 30px 20px 0;
-    &:last-child {
-      margin: 20px 0 20px 30px;
-    }
-    @include calc(width, '50% - 32px');
+    @include calc(width, '50% - 44px');
   }
   .table-row {
     width: 100%;
     display: block;
     .table-cell {
       display: inline-block;
-      @include calc(width, '50% - 10px');
+      @include calc(width, '50% - 4px');
       margin: 10px 0;
       font-size: 14px;
       font-family: $sanserif;
       @include media-min-width(tablet) {
         width: 50%;
-        font-size: 19px;
+        font-size: 20px;
       }
       &:first-child {
         text-align: left;
@@ -97,43 +93,10 @@ section {
   }
 }
 
-.symbol {
-  width: 100%;
-}
-
-.title{
-  font-size: 25px;
-  color: $black;
-  margin-bottom: 10px;
-  text-align: left;
-  font-family: $serif;
-  font-weight: 600;
-}
-
-.copy {
-  font-size: 18px;
-  text-align: left;
-  font-family: $sanserif;
-}
-
 .news-item {
   margin: 0;
   padding: 20px;
   text-align: center;
-  @include prefix( border-radius, 15px 15px 15px 15px , webkit ms);
-  @include prefix( box-shadow,  0px 0px 15px 5px rgba(0,0,0,0.1), webkit ms);
-  @include calc(width, '100% - 42px');
-  @include calc(max-width, '100% - 42px');
-  @include media-min-width(mobile) {
-    padding: 20px 30px;
-    @include calc(width, '100% - 62px');
-    @include calc(max-width, '100% - 62px');
-  }
-  @include media-min-width(tablet) {
-    padding: 20px 40px;
-    @include calc(width, '100% - 82px');
-    @include calc(max-width, '100% - 82px');
-  }
   &__title {
     font-size: 24px;
     margin: 30px 0;
@@ -161,12 +124,4 @@ section {
     font-family: $sanserif;
     font-weight: 600;
   }
-}
-
-
-.chart-container {
-  display: block;
-  padding: 20px 0;
-  @include prefix( border-radius, 15px 15px 15px 15px , webkit ms);
-  @include prefix( box-shadow,  0px 0px 15px 5px rgba(0,0,0,0.1), webkit ms);
 }

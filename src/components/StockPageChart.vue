@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="stock-chart">
     <div v-if="stockName" class="chart">
       <vue-frappe
         v-bind:id="stockName"

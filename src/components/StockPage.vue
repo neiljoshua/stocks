@@ -1,46 +1,44 @@
 <template v-if="stockInfo(stockname)">
 
-  <div class="stock-page">
+  <div class="stock">
 
-    <section>
-      <div class="stock-info">
-        <h2 class="title">{{$route.params.name}}</h2>
-        <p class="copy">{{stockInfo(stockname).companyName}}</p>
-        <div class="table">
-          <div class="table-row">
-            <div class="table-cell"> Open: </div>
-            <div class="table-cell">{{stockInfo(stockname).open}} </div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">High:</div>
-            <div class="table-cell">{{stockInfo(stockname).high}}</div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">Low:</div>
-            <div class="table-cell">{{stockInfo(stockname).low}}</div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">Vol:</div>
-            <div class="table-cell">{{stockInfo(stockname).latestVolume}}</div>
-          </div>
+    <section class="stock-info">
+      <h2 class="stock-info__title">{{$route.params.name}}</h2>
+      <p class="stock-info__copy">{{stockInfo(stockname).companyName}}</p>
+      <div class="table">
+        <div class="table-row">
+          <div class="table-cell"> Open: </div>
+          <div class="table-cell">{{stockInfo(stockname).open}} </div>
         </div>
-        <div class="table">
-          <div class="table-row">
-            <div class="table-cell">Close:</div>
-            <div class="table-cell">{{stockInfo(stockname).close}}</div>
-         </div>
-          <div class="table-row">
-            <div class="table-cell">52 Week High:</div>
-            <div class="table-cell">{{stockInfo(stockname).week52High}}</div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">52 Week Low:</div>
-            <div class="table-cell">{{stockInfo(stockname).week52Low}}</div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">Avg. Vol:</div>
-            <div class="table-cell">{{stockInfo(stockname).avgTotalVolume}}</div>
-          </div>
+        <div class="table-row">
+          <div class="table-cell">High:</div>
+          <div class="table-cell">{{stockInfo(stockname).high}}</div>
+        </div>
+        <div class="table-row">
+          <div class="table-cell">Low:</div>
+          <div class="table-cell">{{stockInfo(stockname).low}}</div>
+        </div>
+        <div class="table-row">
+          <div class="table-cell">Vol:</div>
+          <div class="table-cell">{{stockInfo(stockname).latestVolume}}</div>
+        </div>
+      </div>
+      <div class="table">
+        <div class="table-row">
+          <div class="table-cell">Close:</div>
+          <div class="table-cell">{{stockInfo(stockname).close}}</div>
+       </div>
+        <div class="table-row">
+          <div class="table-cell">52 Week High:</div>
+          <div class="table-cell">{{stockInfo(stockname).week52High}}</div>
+        </div>
+        <div class="table-row">
+          <div class="table-cell">52 Week Low:</div>
+          <div class="table-cell">{{stockInfo(stockname).week52Low}}</div>
+        </div>
+        <div class="table-row">
+          <div class="table-cell">Avg. Vol:</div>
+          <div class="table-cell">{{stockInfo(stockname).avgTotalVolume}}</div>
         </div>
       </div>
     </section>

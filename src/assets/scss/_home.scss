@@ -1,34 +1,37 @@
-.home{
+.stocks {
   display: block;
-  width: 100%;
-  padding: 20px 0;
+  padding: 20px;
+  @include calc( width, '100% - 40px');
+  @include media-min-width(mobile) {
+    padding: 20px 30px ;
+    @include calc( width, '100% - 60px');
+  }
+  @include media-min-width(tablet) {
+    padding: 20px 40px ;
+    @include calc( width, '100% - 80px');
+  }
 }
 
-article {
+.stocks-block {
   display: block;
   width: 100%;
   overflow: hidden;
   text-align: center;
   font-size: 0;
-  padding: 20px 0;
-  border-top: 1px solid $silver;
+  border: 1px solid $silver;
   @include media-min-width(mobile) {
-    border: 1px solid $silver;
-    @include prefix( border-radius, 15px 15px 15px 15px , webkit ms);
-    padding: 10px;
     margin: 20px;
-    @include calc( width, '100% - 82px');
+    @include prefix( border-radius, 15px 15px 15px 15px , webkit ms);
+    @include calc( width, '100% - 42px');
   }
   @include media-min-width(desktop) {
     max-width: 1020px;
     margin: 20px auto;
-    padding: 30px;
-    @include calc( width, '100% - 102px');
   }
 }
 
-.info,
-.stocks-list{
+.stocks-info,
+.stocks-list {
   display: inline-block;
   margin: 20px;
   padding: 20px;
@@ -48,14 +51,9 @@ article {
   }
 }
 
-.symbol,
-.net-change,
-.price {
+.stocks-info__symbol {
   display: inline-block;
-  width: 50%;
-}
-
-.symbol{
+  width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   font-size: 28px;
@@ -70,12 +68,17 @@ article {
   }
 }
 
-.net-change {
+.stocks-info__change {
+  display: inline-block;
+  width: 50%;
   text-align: left;
   font-size: 22px;
   font-family: $sanserif;
 }
-.price {
+
+.stocks-info__price {
+  display: inline-block;
+  width: 50%;
   margin-top: 10px;
   font-size: 22px;
   text-align: right;
@@ -95,10 +98,10 @@ article {
     color: $gray;
     font-family: $sanserif;
   }
-  &__day{
+  &__day {
     text-align: left;
   }
-  &__price{
+  &__price {
     text-align: right;
   }
 }
@@ -110,9 +113,3 @@ article {
 .neg {
   color: $negative_stock_color;
 }
-
-
-
-
-
-
