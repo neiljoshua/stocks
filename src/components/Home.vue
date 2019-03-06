@@ -1,7 +1,7 @@
 <template>
-  <div class="stocks">
+  <main class="stocks">
     <stock v-for="stock in stocks" :key="stock.key" :stock="stock"></stock>
-  </div>
+  </main>
 </template>
 
 <script>

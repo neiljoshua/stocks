@@ -1,0 +1,26 @@
+.footer {
+  display: block;
+  border-top: 1px solid $silver;
+  padding: 20px;
+  @include calc(width, '100% - 40px');
+  @include prefix( box-shadow,  1px -5px 15px -6px rgba(0,0,0,0.75), webkit ms);
+  @include media-min-width(mobile) {
+    padding: 30px 20px;
+  }
+  @include media-min-width(tablet) {
+    padding: 40px;
+    @include calc(width, '100% - 80px');
+  }
+  &__copyright {
+    text-align: center;
+    font-family: $sanserif;
+    color: $gray;
+    font-size: 12px;
+    @include media-min-width(mobile) {
+      font-size: 14px;
+    }
+    @include media-min-width(tablet) {
+      font-size: 16px;
+    }
+  }
+}

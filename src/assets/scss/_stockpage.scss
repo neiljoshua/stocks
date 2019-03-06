@@ -1,13 +1,13 @@
 .stock {
   display: block;
-  padding: 20px 20px 60px;
+  padding: 20px;
   @include calc(width, '100% - 40px');
   @include media-min-width(mobile) {
-    padding: 20px 30px 60px;
+    padding: 20px 30px;
     @include calc(width, '100% - 60px');
   }
   @include media-min-width(tablet) {
-    padding: 20px 40px 60px;
+    padding: 20px 40px;
     @include calc(width, '100% - 80px');
   }
   &-info,
@@ -28,6 +28,7 @@
 .stock-info {
   &__title,
   &__copy {
+    font-family: $sanserif;
     margin-left: 20px;
     margin-bottom: 20px;
   }
@@ -35,7 +36,7 @@
 
 .table {
   display: block;
-  margin: 40px 20px;
+  margin: 0 20px;
   @include calc(width, '100% - 40px');
   @include media-min-width(mobile) {
     display: inline-block;
