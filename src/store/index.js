@@ -7,6 +7,7 @@ Vue.use(Vuex)
 Vue.use(VueAxios, axios)
 
 export const store = new Vuex.Store({
+
   state: {
     stocks: []
   },
@@ -26,8 +27,9 @@ export const store = new Vuex.Store({
   },
   actions: {
     loadStocks ({ commit }) {
+      var apiToken = process.env.IEXAPI;
       axios
-        .get('https://api.iextrading.com/1.0/stock/market/batch?symbols=aapl,fb,msft,tsla,ba&types=quote,news,chart&range=1m&last=1')
+        .get('https://cloud.iexapis.com/v1/stock/market/batch?symbols=aapl,fb,msft,tsla,ba&types=quote,news,chart&range=1m&last=1&token='+apiToken)
         .then(r => r.data)
         .then(stocks => {
           commit('SET_STOCKS', stocks)

@@ -1,6 +1,8 @@
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 var path = require('path')
 var webpack = require('webpack')
+var Dotenv = require('dotenv-webpack')
+
 
 module.exports = {
   entry: './src/main.js',
@@ -84,7 +86,10 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  plugins: [
+    new Dotenv()
+  ]
 }
 
 if (process.env.NODE_ENV === 'production') {
