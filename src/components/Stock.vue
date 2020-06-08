@@ -4,7 +4,7 @@
     <div class="stocks-info">
       <button @click="goToStockPAge" class="stocks-info__symbol">{{stock.quote.symbol}}</button>
       <h3 class="stocks-info__change" v-bind:class="stockChangeValue" > {{stock.quote.change}} </h3>
-      <p class="stocks-info__price">$ {{roundValue}}</p>
+      <p class="stocks-info__price">$ {{ roundValue }}</p>
     </div>
     <stockChart :stock="stock.chart" :stockId="stock.quote.symbol"></stockChart>
   </article>
@@ -44,7 +44,7 @@
         }
       },
       roundValue() {
-        return Number.parseFloat(this.stock.quote.delayedPrice).toFixed(2);
+        return Number.parseFloat(this.stock.quote.iexBidPrice).toFixed(2);
       }
     },
     components: {
